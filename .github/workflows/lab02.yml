@@ -7,7 +7,8 @@ jobs:
       - run: echo "Hello, World!"
       - run: pip install nbconvert ipykernel matplotlib pint scipy numpy open-atmos-jupyter-utils
       - uses: actions/checkout@v4
-      - run: brew install pandoc basictex inkscape
+      - run: brew install pandoc inkscape
+      - run: brew install --cask basictex
       - run: sudo tlmgr update --self && sudo tlmgr install collection-xetex
       - run: python -m nbconvert --to pdf --execute lab1/lab1.ipynb
       - uses: actions/upload-artifact@v4
