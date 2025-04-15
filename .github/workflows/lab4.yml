@@ -1,14 +1,15 @@
-name: lab4
-on: [push]
-jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - run: pip install nbconvert ipykernel matplotlib pint scipy numpy open-atmos-jupyter-utils
-      - uses: actions/checkout@v4
-      - run: sudo apt-get install pandoc texlive-xetex inkscape
-      - run: python -m nbconvert --to pdf --execute lab4/lab4.ipynb
-      - uses: actions/upload-artifact@v4
-        with:
-          name: lab4
-          path: lab4/lab4.pdf
+# name: lab4
+# on: [push]
+# jobs:
+#   test:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - run: pip install nbconvert ipykernel matplotlib pint scipy numpy open-atmos-jupyter-utils
+#       - uses: actions/checkout@v4
+#       - run: sudo apt-get update
+#       - run: sudo apt-get install pandoc texlive-xetex inkscape
+#       - run: python -m nbconvert --to pdf --execute lab4/lab4.ipynb
+#       - uses: actions/upload-artifact@v4
+#         with:
+#           name: lab4
+#           path: lab4/lab4.pdf
